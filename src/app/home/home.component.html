@@ -1,0 +1,20 @@
+<section #section class="bg-warning p-5">
+  <h1 class="text-center mb-5 text-danger fw-bold bg-white p-2 mx-auto rounded-3 ">Products From API</h1>
+  <div class="container">
+    <div class="row g-4 ">
+      @for (product of products; track $index) {
+      <div class="col-sm-6 col-md-3">
+        <div class="card border-3 border-secondary p-2 h-100 ">
+          <img [src]="product.image" class="w-50 h-50 mx-auto" alt="">
+          <h2>Titel : {{product.title}} </h2>
+          <p> {{product.description.split(" ",15).join(" ")}} </p>
+          <p> Category : <span class="badge text-bg-danger">{{product.category}}</span> </p>
+          <p> Price : <span class="badge text-bg-danger">{{product.price}} $</span> </p>
+          <span class="badge text-bg-primary p-2 rate">Rate <span> : {{product.rating.rate}} </span> </span>
+          <span class="badge text-bg-primary p-2 mt-2 count">Count <span> : {{product.rating.count}} </span> </span>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
